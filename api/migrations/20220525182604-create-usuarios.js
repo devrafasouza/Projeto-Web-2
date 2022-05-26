@@ -11,11 +11,14 @@ module.exports = {
       nome: {
         type: Sequelize.STRING
       },
+      senha: {
+        type: Sequelize.STRING
+      },
       ativo: {
         type: Sequelize.BOOLEAN
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       role: {
         type: Sequelize.STRING

@@ -7,6 +7,7 @@ module.exports = {
     [
       {
         nome: 'Rafael',
+        senha: '123',
         ativo: true,
         email: 'devrafasouza@gmail.com',
         role: 'admin',
