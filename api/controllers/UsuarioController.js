@@ -1,7 +1,7 @@
 const database = require('../models');
 const bcrypt = require('bcrypt');
 const jsonwebtoken = require('jsonwebtoken');
-const Usuarios = require('../models/usuarios.js');
+
 
 class UsuarioController {
   static async pegaTodosOsUsuarios(req, res) {
@@ -28,7 +28,7 @@ class UsuarioController {
     }
   }
 
-  static async criaUsuario(req, res) {
+  static async registraUsuario(req, res) {
     const novoUsuario = req.body;
     novoUsuario.senha = await bcrypt.hash(novoUsuario.senha, 12);
     try {
@@ -73,7 +73,7 @@ class UsuarioController {
     }
   }
 
-  static async autenticaUsuario(req, res) {
+  static async loginUsuario(req, res) {
     const { email, senha } = req.body;
     const { id } = req.params
 
@@ -102,10 +102,7 @@ class UsuarioController {
       return res.status(500).json(error.message);
     }
 
-  
-
   }
-
 
 }
 
