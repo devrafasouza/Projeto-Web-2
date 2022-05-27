@@ -1,5 +1,7 @@
 const database = require('../models');
 const bcrypt = require('bcrypt');
+const jsonwebtoken = require('jsonwebtoken');
+const Usuarios = require('../models/usuarios.js');
 
 class UsuarioController {
   static async pegaTodosOsUsuarios(req, res) {
@@ -69,6 +71,39 @@ class UsuarioController {
     } catch (error) {
         return res.status(500).json(error.message);
     }
+  }
+
+  static async autenticaUsuario(req, res) {
+    const { email, senha } = req.body;
+    const { id } = req.params
+
+    try {
+      const usuarioValido = await database.Usuarios.findOne({
+        where: { 
+          email: email
+        }
+      });
+      if(!usuarioValido) {
+        throw new Error("Email ou senha invalida!");
+      }
+      const senhaValida = await bcrypt.compare(senha, usuarioValido.senha);
+      if(!senhaValida) {
+        throw new Error("Email ou senha invalida!");
+      }
+      const token = jsonwebtoken.sign({}, "5f4dcc3b5aa765d61d8327deb882cf99", {
+        subject: String(usuarioValido.id),
+        expiresIn: "1d"
+      });
+
+      return res.status(200).json(token);
+
+
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+
+  
+
   }
 
 
