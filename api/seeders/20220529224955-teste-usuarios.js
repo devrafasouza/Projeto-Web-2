@@ -10,7 +10,6 @@ module.exports = {
         senha: '123',
         ativo: true,
         email: 'devrafasouza@gmail.com',
-        role: 'admin',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -18,7 +17,6 @@ module.exports = {
         nome: 'Beatriz',
         ativo: true,
         email: 'beatriz@gmail.com',
-        role: 'admin',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -26,7 +24,6 @@ module.exports = {
         nome: 'João',
         ativo: true,
         email: 'joao@gmail.com',
-        role: 'estudante',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -34,7 +31,6 @@ module.exports = {
         nome: 'Pedro',
         ativo: false,
         email: 'pedro@gmail.com',
-        role: 'estudante',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -42,7 +38,6 @@ module.exports = {
         nome: 'Cleber',
         ativo: true,
         email: 'cleber@gmail.com',
-        role: 'estudante',
         createdAt: new Date(),
         updatedAt: new Date()
       }
@@ -56,3 +51,4 @@ module.exports = {
      
   }
 };
+

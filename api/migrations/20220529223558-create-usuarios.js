@@ -6,7 +6,8 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        unique: true
       },
       nome: {
         type: Sequelize.STRING
@@ -19,9 +20,8 @@ module.exports = {
       },
       email: {
         type: Sequelize.STRING,
-      },
-      role: {
-        type: Sequelize.STRING
+        unique: true,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

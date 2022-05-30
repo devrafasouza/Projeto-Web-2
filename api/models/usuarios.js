@@ -6,6 +6,9 @@ module.exports = (sequelize, DataTypes) => {
   class Usuarios extends Model {
     
     static associate(models) {
+      Usuarios.belongsToMany(models.Roles, { as: "roles",
+        through: "user_role", foreignKey: "usuario_id"
+      });
       
     }
   }
@@ -42,7 +45,6 @@ module.exports = (sequelize, DataTypes) => {
       }
       },
     },
-    role: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Usuarios',
