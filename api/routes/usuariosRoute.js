@@ -10,5 +10,6 @@ router.post('/registro', UsuarioController.registraUsuario)
 router.put('/usuarios/:id', auth, UsuarioController.atualizaUsuario)
 router.delete('/usuarios/:id', UsuarioController.apagaUsuario);
 router.post('/login', UsuarioController.loginUsuario);
+router.get('/sobre', )
 
 module.exports = router;
