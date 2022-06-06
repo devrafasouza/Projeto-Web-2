@@ -21,9 +21,9 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        nome: 'João',
+        nome: 'Breno Neves',
         ativo: true,
-        email: 'joao@gmail.com',
+        email: 'brenoneves2501@gmail.com',
         createdAt: new Date(),
         updatedAt: new Date()
       },
