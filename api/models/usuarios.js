@@ -9,9 +9,12 @@ module.exports = (sequelize, DataTypes) => {
       Usuarios.belongsToMany(models.Roles, { as: "roles",
         through: "user_role", foreignKey: "usuario_id"
       });
-      
     }
+
+
   }
+
+
   Usuarios.init({
     nome: {
       type: DataTypes.STRING,
@@ -26,12 +29,12 @@ module.exports = (sequelize, DataTypes) => {
     senha: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
+      /* validate: {
         len: {
           args: [6, 40],
           msg: "A senha deve conter ao menos 6 caracteres e no maximo 40"
         }
-      }
+      } */
     },
     ativo: DataTypes.BOOLEAN,
     email: {
@@ -49,5 +52,16 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Usuarios',
   });
+/* 
+  Usuarios.isAdmin = (roles) => {
+    console.log(roles)
+    let tempArray = [];
+    roles.forEach(role => tempArray.push.role.role);
+
+    return tempArray.includes('admin');
+  }
+
+  Usuarios.isAdmin(); */
   return Usuarios;
 };
+

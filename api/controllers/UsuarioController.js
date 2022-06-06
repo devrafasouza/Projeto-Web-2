@@ -75,7 +75,6 @@ class UsuarioController {
 
   static async loginUsuario(req, res) {
     const { email, senha } = req.body;
-    const { id } = req.params
 
     try {
       const usuarioValido = await database.Usuarios.findOne({
@@ -83,6 +82,7 @@ class UsuarioController {
           email: email
         }
       });
+      console.log(usuarioValido.id)
       if(!usuarioValido) {
         throw new Error("Email ou senha invalida!");
       }
