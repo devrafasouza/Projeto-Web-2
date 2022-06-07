@@ -10,9 +10,22 @@ module.exports = (sequelize, DataTypes) => {
         through: "user_role", foreignKey: "usuario_id"
       });
     }
+/* 
+    static isAdmin = function(roles) {
+      let tmpArray = [];
+      roles.forEach(role => tmpArray.push(role.role));
+
+      return tmpArray.includes('admin');
+    } */
 
 
   }
+  /* Usuarios.isAdmin = function(roles) {
+    var tmpArray = [];
+    roles.forEach(role => tmpArray.push(role.Roles));
+
+    return tmpArray.includes('admin');
+  } */
 
 
   Usuarios.init({
@@ -48,20 +61,23 @@ module.exports = (sequelize, DataTypes) => {
       }
       },
     },
-  }, {
+    historico: {
+      type: DataTypes.STRING,
+      get: function() {
+        return JSON.parse(this.getDataValue('historico'));
+      },
+      set: function(val) {
+        return this.setDataValue('historico', JSON.stringify(val));
+      }
+    }
+  },
+   {
     sequelize,
     modelName: 'Usuarios',
   });
-/* 
-  Usuarios.isAdmin = (roles) => {
-    console.log(roles)
-    let tempArray = [];
-    roles.forEach(role => tempArray.push.role.role);
 
-    return tempArray.includes('admin');
-  }
+  /* Usuarios.isAdmin(); */
 
-  Usuarios.isAdmin(); */
   return Usuarios;
 };
 
