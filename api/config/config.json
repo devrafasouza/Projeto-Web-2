@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "admin",
-    "database": "projeto_web_2",
-    "host": "127.0.0.1",
+    "password": "admin123",
+    "database": "projeto",
+    "host": "projetoo-web-2.csjgxfsvlvwe.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
