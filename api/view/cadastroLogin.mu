@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <form action="/cadastro" method="post">
+    <form id = #formCad>
         <label for="name">Digite seu nome</label>
         <input type="text" name="name">
         <label for="email">Digite seu email</label>
@@ -38,7 +38,7 @@
         <input type="password" name="password2">
         <button type="submit">Enviar</button>
 
-        <a href="/login">Voltar para a tela de login</a>
+        <a href="/cadastro">Voltar para a tela de cadastro</a>
     </form>
 </body>
 
