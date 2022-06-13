@@ -84,3 +84,11 @@ níveis. O usuário precisa estar logado no sistema para acessar este recurso.
 que poderá visualizar o histórico dos usuários, assim como ver o resumo de desempenho de cada usuário. Apenas o administrador poderá acessar este recurso.
   - [ ] Frontend
   - [X] Backend
+
+<br></br>
+
+<h2> Autores </h2>
+
+
+| [<img src="https://avatars.githubusercontent.com/u/64436420?v=4" width=115><br><sub>Rafael de Souza Alcântara</sub>](https://github.com/devrafasouza) |  [<img src="https://avatars.githubusercontent.com/u/48489816?v=4" width=115><br><sub>Breno Neves/sub>](https://github.com/BrenoNNeves) |  [<img src="https://avatars.githubusercontent.com/u/35932949?v=4" width=115><br><sub>Beatriz Benz</sub>](https://github.com/beatrizbenz) |
+| :---: | :---: | :---: |
