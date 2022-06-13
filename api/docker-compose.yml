@@ -12,8 +12,7 @@ services:
     stdin_open: true
     tty: true
     depends_on:
-      - mongo
-      - redis
+      - db
     command: npm start
 
   db:
