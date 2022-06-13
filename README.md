@@ -15,7 +15,7 @@
 <h2> :bookmark_tabs: Descrição do projeto</h2>
 
 <p>Projeto em desenvolvimento para disciplina de Programação Web 2 do curso de Engenharia de Software da Universidade Tecnológica Federal do Paraná.</p>
-<p>O projeto é uma implementação dos conceitos aprendidos em aula. O conceito pré estabelecido pelo professor, implica em desenvolver uma ferramenta para apoio de estudos para alunos de níveis do ensino fundamental e médio.</p
+<p>O projeto é uma implementação dos conceitos aprendidos em aula. O conceito pré estabelecido pelo professor implica em desenvolver uma ferramenta para apoio de estudos para alunos de níveis do ensino fundamental e médio.</p
 <p>Tema selecionado pelos Alunos é uma ferramenta Web para que os usuários alvos possam praticar seus conhecimentos em matemática de uma forma dinâmica e lúdica. O Math Game é uma gameficação para questões de matemática, onde os usuários possuem seus perfis e podem jogar rodadas de questões matemáticas.</p
 <br></br>
 
