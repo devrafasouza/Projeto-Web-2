@@ -3,9 +3,10 @@ const database = require('../models');
 
 module.exports = async (req, res, next) => {
   const authHeader = req.headers.authorization;
+  const { id } = req.params
 
     if(!authHeader) {
-      throw new Error("Falta de Token");
+      return res.status(404).json({ mensagem: "Falta de token"});
       
     }
     
@@ -16,21 +17,19 @@ module.exports = async (req, res, next) => {
       const { sub } = jsonwebtoken.verify(token, "5f4dcc3b5aa765d61d8327deb882cf99");
 
       const usuario = await database.Usuarios.findOne({
-        where: { 
-          id: Number(sub),
-          
+        where: {
+          id: sub
         }
         
       })
       req.usuario = usuario;
-      console.log('o que tem aqui', req.usuario)
+      req.id = id;
       next();
       if(!usuario) {
-        throw new Error("Usuario não existe");
+        return res.status(404).json({ mensagem: "Usuario não existe na base de dados"});
       }
     } catch (error) {
-        return res.status(400).json(error.mensagem)
-        
-      
+      return res.status(404).json({ mensagem: "Token invalido"});
+         
     }
 }

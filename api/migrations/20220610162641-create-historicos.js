@@ -1,17 +1,32 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Roles', {
+    await queryInterface.createTable('Historicos', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
-        unique: true
+        type: Sequelize.INTEGER
       },
-      role: {
+      nivel: {
         type: Sequelize.STRING
       },
+      acertou: {
+        type: Sequelize.BOOLEAN
+      },
+      errou: {
+        type: Sequelize.BOOLEAN
+      },
+      pergunta: {
+        type: Sequelize.STRING
+      },
+      resposta: {
+        type: Sequelize.STRING
+      },
+      pontuacao: {
+        type: Sequelize.INTEGER
+      },
+      
       usuario_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
@@ -31,6 +46,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Roles');
+    await queryInterface.dropTable('Historicos');
   }
 };

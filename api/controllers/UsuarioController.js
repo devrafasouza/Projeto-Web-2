@@ -2,7 +2,6 @@ const database = require('../models');
 const bcrypt = require('bcrypt');
 const jsonwebtoken = require('jsonwebtoken');
 
-
 class UsuarioController {
   static async pegaTodosOsUsuarios(req, res) {
     try {
@@ -102,31 +101,6 @@ class UsuarioController {
       return res.status(500).json(error.message);
     }
 
-  }
-
-  static async pegaUmHistorico(req, res) {
-    const { id } = req.params;
-    try {
-      const historicoUsuario = await database.Usuarios.findOne({
-        attributes: ['historico'],
-        where: { 
-          id: Number(id) 
-        }
-      }); 
-      return res.status(200).json(historicoUsuario);
-    } catch (error) {
-        return res.status(500).json(error.message);
-    }
-  }
-  static async pegaTodosHistoricos(req, res) {
-    try {
-      const historicosUsuarios = await database.Usuarios.findAll({
-        attributes: ['id','Nome','historico'],
-      }); 
-      return res.status(200).json(historicosUsuarios);
-    } catch (error) {
-        return res.status(500).json(error.message);
-    }
   }
 
 }
