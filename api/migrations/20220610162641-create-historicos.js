@@ -11,12 +11,22 @@ module.exports = {
       nivel: {
         type: Sequelize.STRING
       },
-      acertos: {
+      acertou: {
+        type: Sequelize.BOOLEAN
+      },
+      errou: {
+        type: Sequelize.BOOLEAN
+      },
+      pergunta: {
+        type: Sequelize.STRING
+      },
+      resposta: {
+        type: Sequelize.STRING
+      },
+      pontuacao: {
         type: Sequelize.INTEGER
       },
-      erros: {
-        type: Sequelize.INTEGER
-      },
+      
       usuario_id: {
         allowNull: false,
         type: Sequelize.INTEGER,

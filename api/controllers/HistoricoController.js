@@ -8,11 +8,28 @@ class HistoricoController {
     const { id } = req.params;
     try {
       const historicoUsuario = await database.Historicos.findAll({
+        attributes: ["usuario_id", "nivel", "acertou", "errou", "pergunta", "resposta", "pontuacao"],
         where: { 
           usuario_id : Number(id)
         },
+
       }); 
       return res.status(200).json(historicoUsuario);
+    } catch (error) {
+        return res.status(500).json(error.message);
+    }
+  }
+  static async pegaHistoricoResumido(req, res) {
+    const { id } = req.params;
+    try {
+      const historicoResumidoUsuario = await database.Historicos.findAll({
+        attributes: ["usuario_id", "nivel", "acertou", "errou", "pergunta", "resposta", "pontuacao"],
+        where: { 
+          usuario_id : Number(id)
+        },
+
+      }); 
+      return res.status(200).json(historicoResumidoUsuario);
     } catch (error) {
         return res.status(500).json(error.message);
     }

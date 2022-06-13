@@ -7,84 +7,164 @@ module.exports = {
     [
       {
         nivel: 'facil',
-        acertos: 10,
-        erros: 0,
+        acertou: true,
+        errou: false,
+        pergunta: "2 + 2",
+        resposta: "4",
+        pontuacao: 10,
         usuario_id: 1,
         createdAt: new Date(),
         updatedAt: new Date() 
       },
       {
         nivel: 'dificil',
-        acertos: 8,
-        erros: 2,
+        acertou: true,
+        errou: false,
+        pergunta: "4 * 10",
+        resposta: "40",
+        pontuacao: 50,
         usuario_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
          
       },
       {
-        nivel: 'dificil',
-        acertos: 5,
-        erros: 5,
-        usuario_id: 2,
-        createdAt: new Date(),
-        updatedAt: new Date() 
-      },
-      {
         nivel: 'facil',
-        acertos: 9,
-        erros: 1,
-        usuario_id: 2,
+        acertou: true,
+        errou: false,
+        pergunta: "2 + 2",
+        resposta: "4",
+        pontuacao: 10,
+        usuario_id: 1,
         createdAt: new Date(),
         updatedAt: new Date() 
       },
       {
         nivel: 'dificil',
-        acertos: 5,
-        erros: 5,
-        usuario_id: 3,
+        acertou: true,
+        errou: false,
+        pergunta: "4 * 10",
+        resposta: "40",
+        pontuacao: 50,
+        usuario_id: 1,
         createdAt: new Date(),
-        updatedAt: new Date() 
+        updatedAt: new Date()
+         
       },
       {
         nivel: 'facil',
-        acertos: 9,
-        erros: 1,
-        usuario_id: 3,
+        acertou: true,
+        errou: false,
+        pergunta: "2 + 2",
+        resposta: "4",
+        pontuacao: 10,
+        usuario_id: 1,
         createdAt: new Date(),
         updatedAt: new Date() 
       },
       {
         nivel: 'dificil',
-        acertos: 5,
-        erros: 5,
-        usuario_id: 4,
+        acertou: true,
+        errou: false,
+        pergunta: "4 * 10",
+        resposta: "40",
+        pontuacao: 40,
+        usuario_id: 1,
         createdAt: new Date(),
-        updatedAt: new Date() 
+        updatedAt: new Date()
+         
       },
       {
         nivel: 'facil',
-        acertos: 9,
-        erros: 1,
-        usuario_id: 4,
+        acertou: true,
+        errou: false,
+        pergunta: "2 + 2",
+        resposta: "4",
+        pontuacao: 10,
+        usuario_id: 1,
         createdAt: new Date(),
         updatedAt: new Date() 
       },
       {
         nivel: 'dificil',
-        acertos: 5,
-        erros: 5,
-        usuario_id: 5,
+        acertou: true,
+        errou: false,
+        pergunta: "4 * 10",
+        resposta: "40",
+        pontuacao: 60,
+        usuario_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+         
+      },
+      {
+        nivel: 'facil',
+        acertou: true,
+        errou: false,
+        pergunta: "2 + 2",
+        resposta: "4",
+        pontuacao: 15,
+        usuario_id: 12,
         createdAt: new Date(),
         updatedAt: new Date() 
       },
       {
+        nivel: 'dificil',
+        acertou: true,
+        errou: false,
+        pergunta: "4 * 10",
+        resposta: "40",
+        pontuacao: 70,
+        usuario_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+         
+      },
+      {
         nivel: 'facil',
-        acertos: 9,
-        erros: 1,
-        usuario_id: 5,
+        acertou: true,
+        errou: false,
+        pergunta: "2 + 2",
+        resposta: "4",
+        pontuacao: 10,
+        usuario_id: 12,
         createdAt: new Date(),
         updatedAt: new Date() 
+      },
+      {
+        nivel: 'dificil',
+        acertou: true,
+        errou: false,
+        pergunta: "4 * 10",
+        resposta: "40",
+        pontuacao: 50,
+        usuario_id: 12,
+        createdAt: new Date(),
+        updatedAt: new Date()
+         
+      },
+      {
+        nivel: 'facil',
+        acertou: false,
+        errou: true,
+        pergunta: "2 + 2",
+        resposta: "4",
+        pontuacao: 15,
+        usuario_id: 12,
+        createdAt: new Date(),
+        updatedAt: new Date() 
+      },
+      {
+        nivel: 'dificil',
+        acertou: true,
+        errou: false,
+        pergunta: "4 * 10",
+        resposta: "40",
+        pontuacao: 70,
+        usuario_id: 12,
+        createdAt: new Date(),
+        updatedAt: new Date()
+         
       },
 
 

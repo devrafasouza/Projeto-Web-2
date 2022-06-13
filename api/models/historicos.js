@@ -13,8 +13,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   Historicos.init({
     nivel: DataTypes.STRING,
-    acertos: DataTypes.INTEGER,
-    erros: DataTypes.INTEGER
+    acertou: DataTypes.BOOLEAN,
+    errou: DataTypes.BOOLEAN,
+    pergunta: DataTypes.STRING,
+    resposta: DataTypes.STRING,
+    pontuacao: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Historicos',
