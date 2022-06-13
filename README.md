@@ -78,7 +78,7 @@ acessa-la.
 - [ ] Histórico de atividades: Será necessário apresentar um histórico das atividades desenvolvidas e o resultado obtido. Além disso, é necessário mostrar um resumo do histórico contendo pelo menos o número de atividades desenvolvidas, acertos e erros em cada um dos
 níveis. O usuário precisa estar logado no sistema para acessar este recurso.
   - [ ] Frontend
-  - [ ] Backend
+  - [X] Backend
 
 - [ ] Visualização do desempenho dos usuários: A aplicação deverá possuir um administrador
 que poderá visualizar o histórico dos usuários, assim como ver o resumo de desempenho de cada usuário. Apenas o administrador poderá acessar este recurso.
