@@ -37,7 +37,7 @@
         <input type="text" name="senha" id="senha">
         <button type="submit">Enviar</button>
 
-        <a href="login.mu">tela de login</a>
+        <a href="login.html">tela de login</a>
     </form>
     <script>
         function init() {
@@ -55,18 +55,24 @@
             // const formData = new FormData(form);
             console.log(nome, senha, email)
                 // const payload = new URLSearchParams(formData);
-
+            let corpo = {
+                nome: nome,
+                senha: senha,
+                email: email
+            }
+            console.log(JSON.stringify(corpo))
             fetch("http://localhost:3000/registro", {
                     method: 'POST',
-                    body: {
-                        nome,
-                        senha,
-                        email
-                    }
-                })
-                .then(res => res.json())
+                    body: JSON.stringify(corpo),
+                    headers: {
+                        "Content-type": "application/json",
+                    },
+                }).then(res => res.json())
                 .then(data => console.log(data))
+
+
         }
+
 
         init()
     </script>
