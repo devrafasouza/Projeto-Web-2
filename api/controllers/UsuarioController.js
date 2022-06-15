@@ -29,7 +29,7 @@ class UsuarioController {
 
     static async registraUsuario(req, res) {
         const novoUsuario = req.body;
-        //novoUsuario.senha = await bcrypt.hash(novoUsuario.senha, 12);
+        novoUsuario.senha = await bcrypt.hash(novoUsuario.senha, 12);
         try {
             const novoUsuarioCriado = await database.Usuarios.create(novoUsuario); /* cria um novo usuario no banco com o metodo create do sequelize */
             return res.status(200).json(novoUsuarioCriado);

@@ -27,15 +27,53 @@
 </head>
 
 <body>
-    <form id=# formLogin>
+    <form id='formLogin'>
         <label for="email">Digite seu email</label>
-        <input type="email" name="email">
-        <label for="password">Digite uma senha</label>
-        <input type="password" name="password">
+        <input type="email" name="email" id="email">
+        <label for="senha">Digite uma senha</label>
+        <input type="senha" name="senha" id="senha">
         <button type="submit">Enviar</button>
 
-        <a href=".sobre">Voltar para a tela de login</a>
+        <a href="cadastroLogin.html">tela de cadastro</a>
+        <a href="sobre.html">tela de sobre</a>
     </form>
+    <script>
+        function init() {
+            let form = document.getElementById('formLogin')
+            form.addEventListener('submit', fazerLogin)
+        }
+
+        function fazerLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value
+            const senha = document.getElementById('senha').value
+
+            // let form = document.getElementById('form')
+            // const formData = new FormData(form);
+            console.log(senha, email)
+                // const payload = new URLSearchParams(formData);
+            let log = {
+                email: email,
+                senha: senha
+
+            }
+            console.log(JSON.stringify(log))
+            fetch("http://localhost:3000/login", {
+                    method: 'POST',
+                    body: JSON.stringify(log),
+                    headers: {
+                        "Content-type": "application/json",
+                    },
+                }).then(res => res.json())
+                .then(data => console.log(data))
+
+
+        }
+
+
+        init()
+    </script>
+
 </body>
 
 </html>
