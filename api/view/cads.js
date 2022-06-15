@@ -1,27 +1,33 @@
-const { response } = require("express")
+// const axios = require('axios');
 
+// *
 
-
-function fazPost(url, body) {
-    let request = new XMLHttpRequest()
-    request.open("POST", url, true)
-    request.setRequestHeader("Content-type", "application/json")
-    request.send(JSON.stringify(body))
+/*function getPadrão() {
+    axios.get('http://localhost:3000/usuarios')
+        .then(res => console.log(res))
 
 }
+getPadrão() */
+// function fazPost(url, body) {
+//     let request = new XMLHttpRequest()
+//     request.open("POST", url, true)
+//     request.setRequestHeader("Content-type", "application/json")
+//     console.log(JSON.stringify(body))
+//     request.send(JSON.stringify(body))
 
-function cadastrar() {
+// }
 
-    event.defaultPrevented()
-    const url = "http://localhost:3030"
-    let nome = document.getElementById("name").value
-    let senha = document.getElementById("password").value
-    let email = document.getElementById("email").value
-    body = {
-        "name": nome,
-        "password": senha,
-        "email": email
+// function cadastrar() {
 
-    }
-    fazPost(url, body)
-}
+//     form.addEventListener('submit', function(e) {
+//         e.preventDefault();
+//         const formData = new FormData(form);
+//         const payload = new URLSearchParams(formData);
+//         fetch("http://localhost:3000/registro", {
+//                 method: 'POST',
+//                 body: payload,
+//             })
+//             .then(res => res.json())
+//             .then(data => console.log(data))
+//     })
+// }

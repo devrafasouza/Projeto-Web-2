@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>cadastro</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="cads.js"></script>
+
     <style>
         body {
             display: flex;
@@ -28,18 +28,48 @@
 </head>
 
 <body>
-    <form onsubmit="cadastrar()">
-        <label for="name">Digite seu nome</label>
-        <input type="text" name="name" id="name">
+    <form id="form">
+        <label for="nome">Digite seu nome</label>
+        <input type="text" name="nome" id="nome">
         <label for="email">Digite seu email</label>
         <input type="email" name="email" id="email">
-        <label for="password">Digite uma senha</label>
-        <input type="password" name="password" id="password">
+        <label for="senha">Digite uma senha</label>
+        <input type="text" name="senha" id="senha">
         <button type="submit">Enviar</button>
 
-        <a href="/cadastro">Voltar para a tela de cadastro</a>
+        <a href="login.mu">tela de login</a>
     </form>
-    <script src="cads.js"></script>
+    <script>
+        function init() {
+            let form = document.getElementById('form')
+            form.addEventListener('submit', cadastrar)
+        }
+
+        function cadastrar(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value
+            const email = document.getElementById('email').value
+            const senha = document.getElementById('senha').value
+
+            // let form = document.getElementById('form')
+            // const formData = new FormData(form);
+            console.log(nome, senha, email)
+                // const payload = new URLSearchParams(formData);
+
+            fetch("http://localhost:3000/registro", {
+                    method: 'POST',
+                    body: {
+                        nome,
+                        senha,
+                        email
+                    }
+                })
+                .then(res => res.json())
+                .then(data => console.log(data))
+        }
+
+        init()
+    </script>
 </body>
 
 </html>
