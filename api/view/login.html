@@ -50,6 +50,7 @@
 
             // let form = document.getElementById('form')
             // const formData = new FormData(form);
+            let resto, toke
             console.log(senha, email)
                 // const payload = new URLSearchParams(formData);
             let log = {
@@ -63,9 +64,25 @@
                     body: JSON.stringify(log),
                     headers: {
                         "Content-type": "application/json",
+                        'Autorization': sessionStorage.getItem('token')
                     },
                 }).then(res => res.json())
-                .then(data => console.log(data))
+                .then(data => {
+                    window.location.href = "usuario.html";
+                })
+                .then(token => sessionStorage.setItem('token', token))
+
+
+            // fetch("http://localhost:3000//usuarios/:id", {
+            //     headers: {
+            //         Autorization: sessionStorage.getItem('token')
+            //     }
+            // })
+
+
+
+
+
 
 
         }
