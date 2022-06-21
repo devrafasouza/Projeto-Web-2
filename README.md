@@ -90,5 +90,5 @@ que poderá visualizar o histórico dos usuários, assim como ver o resumo de de
 <h2> Autores </h2>
 
 
-| [<img src="https://avatars.githubusercontent.com/u/64436420?v=4" width=115><br><sub>Rafael de Souza Alcântara</sub>](https://github.com/devrafasouza) |  [<img src="https://avatars.githubusercontent.com/u/48489816?v=4" width=115><br><sub>Breno Neves/sub>](https://github.com/BrenoNNeves) |  [<img src="https://avatars.githubusercontent.com/u/35932949?v=4" width=115><br><sub>Beatriz Benz</sub>](https://github.com/beatrizbenz) |
+| [<img src="https://avatars.githubusercontent.com/u/64436420?v=4" width=115><br><sub>Rafael de Souza Alcântara</sub>](https://github.com/devrafasouza) |  [<img src="https://avatars.githubusercontent.com/u/48489816?v=4" width=115><br><sub>Breno Neves</sub>](https://github.com/BrenoNNeves) |  [<img src="https://avatars.githubusercontent.com/u/35932949?v=4" width=115><br><sub>Beatriz Benz</sub>](https://github.com/beatrizbenz) |
 | :---: | :---: | :---: |
