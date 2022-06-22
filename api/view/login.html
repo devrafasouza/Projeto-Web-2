@@ -3,12 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>cadastro</title>
-    <script src=" cads.js "></script>
-    <style>
+    <script defer src="loginValida.js"></script>
+    <title>Login</title>
+    <!-- <style>
         body {
             display: flex;
             flex-direction: row;
@@ -23,74 +21,22 @@
             justify-content: space-around;
             height: 150px;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
-    <form id='formLogin'>
-        <label for="email">Digite seu email</label>
-        <input type="email" name="email" id="email">
-        <label for="senha">Digite uma senha</label>
-        <input type="senha" name="senha" id="senha">
-        <button type="submit">Enviar</button>
-
-        <a href="cadastroLogin.html">tela de cadastro</a>
-        <a href="sobre.html">tela de sobre</a>
-    </form>
-    <script>
-        function init() {
-            let form = document.getElementById('formLogin')
-            form.addEventListener('submit', fazerLogin)
-        }
-
-        function fazerLogin(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value
-            const senha = document.getElementById('senha').value
-
-            // let form = document.getElementById('form')
-            // const formData = new FormData(form);
-            let resto, toke
-            console.log(senha, email)
-                // const payload = new URLSearchParams(formData);
-            let log = {
-                email: email,
-                senha: senha
-
-            }
-            console.log(JSON.stringify(log))
-            fetch("http://localhost:3000/login", {
-                    method: 'POST',
-                    body: JSON.stringify(log),
-                    headers: {
-                        "Content-type": "application/json",
-                        'Autorization': sessionStorage.getItem('token')
-                    },
-                }).then(res => res.json())
-                .then(data => {
-                    window.location.href = "usuario.html";
-                })
-                .then(token => sessionStorage.setItem('token', token))
-
-
-            // fetch("http://localhost:3000//usuarios/:id", {
-            //     headers: {
-            //         Autorization: sessionStorage.getItem('token')
-            //     }
-            // })
-
-
-
-
-
-
-
-        }
-
-
-        init()
-    </script>
-
+    <main class="login">
+        <div class="login__container">
+            <h1 class="login__title">Login</h1>
+            <form class="login__form">
+                <input class="login__input" type="email" placeholder="e-mail" />
+                <span class="login__input-border"></span>
+                <input class="login__input" type="password" placeholder="senha" />
+                <span class="login__input-border"></span>
+                <button class="login__submit">Login</button>
+            </form>
+        </div>
+    </main>
 </body>
 
 </html>
