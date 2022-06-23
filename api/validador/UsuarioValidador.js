@@ -5,14 +5,14 @@ const UserSchema = Joi.object({
         .integer()
         .greater(0),
     nome: Joi.string()
-        .min(3)
-        .max(30)
         .required(),
     email: Joi.string()
-        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
+        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
+        .required(),
     senha: Joi.string()
-        .min(6).required(),
-}).with("id", "nome")
+        .min(6)
+        .required(),
+}).with('id', 'email')
 
 module.exports = {
     validateId: function(req, res, next) {
@@ -26,17 +26,29 @@ module.exports = {
         return next()
     },
     validateEmail: function(req, res, next) {
-        const { error, value } = UserSchema.validate(req.body);
+        const { error, value } = Joi.string().email().validate(req.params.email)
+
         if (error) {
-            return res.json({ status: false, msg: "Dados incompletos" })
+            return res.status(500).json({ status: false, msg: "email invalido" });
         }
-        req.body = value
+
+        req.params.email = value
         return next()
     },
     validateSenha: function(req, res, next) {
+        const { error, value } = Joi.number().min(6).validate(req.params.senha)
+
+        if (error) {
+            return res.status(500).json({ status: false, msg: "senha invalido" });
+        }
+
+        req.params.senha = value
+        return next()
+    },
+    validateCadastro: function(req, res, next) {
         const { error, value } = UserSchema.validate(req.body);
         if (error) {
-            return res.json({ status: false, msg: "Dados incompletos" })
+            return res.status(500).json({ status: false, msg: "Cadastro invalido" })
         }
         req.body = value
         return next()

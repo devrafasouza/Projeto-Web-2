@@ -1,4 +1,5 @@
 const init = () => {
+    var erroMostra;
     const validateEmail = (event) => {
         const input = event.currentTarget;
         const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -7,9 +8,11 @@ const init = () => {
         if (!emailTest) {
             submitButton.setAttribute("disabled", "disabled");
             input.nextElementSibling.classList.add('error');
+            erroMostra = 'email invalido';
         } else {
             submitButton.removeAttribute("disabled");
             input.nextElementSibling.classList.remove('error');
+
         }
     }
 
@@ -19,6 +22,7 @@ const init = () => {
         if (input.value.length < 6) {
             submitButton.setAttribute("disabled", "disabled");
             input.nextElementSibling.classList.add('error');
+            erroMostra = 'senha invalida';
         } else {
             submitButton.removeAttribute("disabled");
             input.nextElementSibling.classList.remove('error');
@@ -33,18 +37,18 @@ const init = () => {
     inputEmail.addEventListener('input', validateEmail);
     inputPassword.addEventListener('input', validatePassowrd);
 
-    const errorHandler = () => {
+    const mostraErro = () => {
         submitButton.classList.remove('loading');
         submitButton.classList.remove('success');
         submitButton.classList.add('error');
-        submitButton.textContent = "Error :(";
+        submitButton.textContent = erroMostra;
     }
 
-    const successHandler = () => {
+    const mostraSucesso = () => {
         submitButton.classList.remove('loading');
         submitButton.classList.remove('error');
         submitButton.classList.add('success');
-        submitButton.textContent = "Sent! :)";
+        submitButton.textContent = "Cadastrado";
     }
 
     if (submitButton) {
@@ -65,13 +69,13 @@ const init = () => {
                 })
             }).then((response) => {
                 if (response.status !== 200) {
-                    return errorHandler();
+                    return mostraErro();
                 }
 
-                successHandler();
+                mostraSucesso();
 
             }).catch(() => {
-                errorHandler();
+                mostraErro();
             })
         })
     }
