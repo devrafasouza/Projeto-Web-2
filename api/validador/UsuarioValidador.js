@@ -9,9 +9,9 @@ const UserSchema = Joi.object({
         .max(30)
         .required(),
     email: Joi.string()
-        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
+        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
     senha: Joi.string()
-        .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
+        .min(6).required(),
 }).with("id", "nome")
 
 module.exports = {
