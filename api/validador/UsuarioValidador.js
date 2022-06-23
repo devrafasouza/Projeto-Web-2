@@ -12,7 +12,7 @@ const UserSchema = Joi.object({
     senha: Joi.string()
         .min(6)
         .required(),
-}).with('id', 'email')
+})
 
 module.exports = {
     validateId: function(req, res, next) {
@@ -26,7 +26,7 @@ module.exports = {
         return next()
     },
     validateEmail: function(req, res, next) {
-        const { error, value } = Joi.string().email().validate(req.params.email)
+        const { error, value } = Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).validate(req.params.email)
 
         if (error) {
             return res.status(500).json({ status: false, msg: "email invalido" });
