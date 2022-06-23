@@ -6,7 +6,6 @@ const PoliticasUsuario = require('../politicas/UsuarioPolitica');
 
 const router = Router();
 
-
 router.get('/usuarios/historico/:id', auth, PoliticasUsuario.isMyIdOrAdmin, HistoricoController.pegaHistorico)
 router.get('/usuarios/historico/resume/:id', auth, PoliticasUsuario.isMyIdOrAdmin, HistoricoController.pegaHistoricoResumido)
 router.get('/usuarios/historicos', auth, PoliticasUsuario.isAdmin, HistoricoController.pegaTodosHistoricos)

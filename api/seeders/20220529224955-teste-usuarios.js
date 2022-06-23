@@ -13,7 +13,7 @@ module.exports = {
                 updatedAt: new Date()
             },
             {
-                nome: 'Beatriz',
+                nome: 'Beatriz não fez nada',
                 senha: '$12$oEgF25oEAIt.La1XJNdPjOtEtsTNdvY3XDBDAGAsq7rRfvFUHewkW',
                 ativo: true,
                 role: 'admin',
