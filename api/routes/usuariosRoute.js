@@ -12,7 +12,6 @@ router.post('/registro', UsuarioController.registraUsuario) // rota pra criar um
 router.put('/usuarios/:id', auth, PoliticasUsuario.isMyIdOrAdmin, UsuarioController.atualizaUsuario) // rota para o usuario mudar suas informações, ou um admin
 router.delete('/usuarios/:id', auth, PoliticasUsuario.isMyIdOrAdmin, UsuarioController.apagaUsuario); // rota para o usuario deletar sua conta, ou um adm
 router.post('/login', UsuarioController.loginUsuario); // rota de login de usuario
-router.get('/sobre', )
 
 
 module.exports = router;

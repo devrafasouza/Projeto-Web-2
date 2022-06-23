@@ -71,8 +71,8 @@ const init = () => {
         }).catch(() => {
             errorHandler();
         })
-    })
+    }
 }
-}
+
 
 window.onload = init;
