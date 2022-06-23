@@ -58,22 +58,21 @@ const init = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    email: inputEmail.value,
-                    senha: inputPassword.value,
-                })
-            }).then((response) => {
-                if (response.status !== 200) {
-                    return errorHandler();
-                }
-
-                successHandler();
-
-            }).catch(() => {
-                errorHandler();
+                email: inputEmail.value,
+                senha: inputPassword.value,
             })
+        }).then((response) => {
+            if (response.status !== 200) {
+                return errorHandler();
+            }
+
+            successHandler();
+
+        }).catch(() => {
+            errorHandler();
         })
-    }
+    })
+}
 }
 
 window.onload = init;
