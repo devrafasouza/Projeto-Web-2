@@ -60,16 +60,16 @@ const init = () => {
                 },
                 email: inputEmail.value,
                 senha: inputPassword.value,
+            }).then((response) => {
+                if (response.status !== 200) {
+                    return errorHandler();
+                }
+
+                successHandler();
+
+            }).catch(() => {
+                errorHandler();
             })
-        }).then((response) => {
-            if (response.status !== 200) {
-                return errorHandler();
-            }
-
-            successHandler();
-
-        }).catch(() => {
-            errorHandler();
         })
     }
 }
