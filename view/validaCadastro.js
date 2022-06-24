@@ -49,6 +49,7 @@ const init = () => {
         submitButton.classList.remove('error');
         submitButton.classList.add('success');
         submitButton.textContent = "Cadastrado";
+        window.location.href = "login.html";
     }
 
     if (submitButton) {
