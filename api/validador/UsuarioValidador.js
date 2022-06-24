@@ -51,7 +51,7 @@ module.exports = {
             return res.status(500).json({ status: false, msg: "Cadastro invalido" })
         }
         req.body = value
-        return next()
+        return next() // validador de cadastro se os campos batem com esquema.
 
     }
 }
