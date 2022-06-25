@@ -15,36 +15,36 @@ const UserSchema = Joi.object({
 })
 
 module.exports = {
-    validateId: function(req, res, next) {
-        const { error, value } = Joi.number().integer().greater(0).validate(req.params.id)
+    // validateId: function(req, res, next) {
+    //     const { error, value } = Joi.number().integer().greater(0).validate(req.params.id)
 
-        if (error) {
-            return res.status(500).json({ status: false, msg: "O código não é válido" });
-        }
+    //     if (error) {
+    //         return res.status(500).json({ status: false, msg: "O código não é válido" });
+    //     }
 
-        req.params.id = value
-        return next()
-    },
-    validateEmail: function(req, res, next) {
-        const { error, value } = Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).validate(req.params.email)
+    //     req.params.id = value
+    //     return next()
+    // },
+    // validateEmail: function(req, res, next) {
+    //     const { error, value } = Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).validate(req.params.email)
 
-        if (error) {
-            return res.status(500).json({ status: false, msg: "email invalido" });
-        }
+    //     if (error) {
+    //         return res.status(500).json({ status: false, msg: "email invalido" });
+    //     }
 
-        req.params.email = value
-        return next()
-    },
-    validateSenha: function(req, res, next) {
-        const { error, value } = Joi.number().min(6).validate(req.params.senha)
+    //     req.params.email = value
+    //     return next()
+    // },
+    // validateSenha: function(req, res, next) {
+    //     const { error, value } = Joi.number().min(6).validate(req.params.senha)
 
-        if (error) {
-            return res.status(500).json({ status: false, msg: "senha invalido" });
-        }
+    //     if (error) {
+    //         return res.status(500).json({ status: false, msg: "senha invalido" });
+    //     }
 
-        req.params.senha = value
-        return next()
-    },
+    //     req.params.senha = value
+    //     return next()
+    // },
     validateCadastro: function(req, res, next) {
         const { error, value } = UserSchema.validate(req.body);
         if (error) {
